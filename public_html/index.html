@@ -1,14 +1,40 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Using the Number Input type</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/common.css" />
+
+        <script type="text/javascript" src="js/modernizr-2.6.2/modernizr.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.9.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/placeholder.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(
+                    function() {
+                        if (!Modernizr.input.autofocus) {
+                            // alert("The autofocus attribute is not supported by this browser!");
+                            $("input[autofocus]").focus();  // give focus to whatever elemet has autofocus attribute
+                        }
+
+                        if (!Modernizr.input.placeholder) {
+                            //alert("The placeholder attribute is not supported by this browser!");
+                            makePlaceholders();
+                        }
+                    })
+        </script>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1>Using the Number Input type</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat purus vitae quam tristique ornare. Suspendisse purus erat, blandit non imperdiet at, lacinia vel felis. Praesent quis odio imperdiet, facilisis mauris et, bibendum tortor. Morbi tincidunt pretium neque, ac fringilla magna fringilla vel. Etiam in urna eget lacus rutrum vehicula vel sollicitudin lectus. Nunc vitae dui vitae purus malesuada iaculis. Duis et tortor ut eros auctor scelerisque non a est. Fusce mollis justo urna, vitae porttitor eros dapibus sit amet. Fusce felis velit, lacinia semper porta sed, mattis non ante. Donec placerat vitae nunc non convallis. Sed tempus pretium urna vehicula dictum. Curabitur elit diam, rhoncus nec sagittis non, eleifend egestas lacus. Pellentesque eget vulputate felis. Vivamus mattis semper pharetra. Etiam mattis arcu eu ligula suscipit, non accumsan mauris pellentesque.</p>
+
+        <p>Pellentesque in sodales lectus. Donec aliquet ante quis enim dapibus pellentesque. Donec malesuada libero ut dolor sodales ornare. Sed hendrerit turpis urna, et dignissim est volutpat sed. Nulla quis interdum mauris. Praesent vel ultrices erat, quis condimentum erat. Cras mollis eu felis luctus hendrerit. Morbi id felis venenatis, imperdiet nibh eget, sodales quam. Cras id lectus ac enim congue suscipit id a justo. Cras hendrerit convallis justo eu eleifend. Nullam eget viverra odio. Vivamus at malesuada nulla. In nec vehicula massa. Phasellus id facilisis massa, vel molestie lorem. Integer hendrerit nunc sit amet urna vulputate interdum. Curabitur massa nisi, hendrerit non consectetur sed, porta vitae nunc.</p>
+
+        <!-- form action="" method="post" novalidate-->
+        <form action="">
+            <p><label for="Test1">Field 1:</label><input name="Text1" type="text" autocomplete="off"/> <span class="message">autocomplete off</span></p> 
+            <p><label for="Test2">Field 2:</label><input name="Text2" type="text" autofocus autocomplete="on" /> <span class="message">autofocus, autocomplete on</span></p>
+            <p><label for="Test3">Field 3:</label><input name="Text3" type="text" autocomplete="on" placeholder="Input field description ..."/> <span class="message">placeholder, autocomplete on</span></p>
+        </form>
     </body>
 </html>

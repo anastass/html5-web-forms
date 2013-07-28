@@ -1,0 +1,12 @@
+label {
+    /* 
+    display: block;
+    margin-bottom: 5px;
+    */
+    margin-right: 5px;
+}
+
+span.message {
+    color: red;
+    margin-left: 5px;
+}
